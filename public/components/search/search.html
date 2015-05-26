@@ -1,10 +1,11 @@
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="home">
+            <a class="navbar-brand">
                 Twitter
             </a>
         </div>
+        <li ng-show="loading" class="loading"><i class="fa fa-refresh fa-spin fa-2x"></i></li>
         <form class="navbar-form navbar-right" action="">
             <div class="input-group">
                 <input type="text" placeholder="Search Twitter"  id="searchTerm" class="form-control"/>
@@ -22,7 +23,7 @@
     </div>
     <div class="col-sm-8">
         <ul class="list-group">
-            <ul class="list-group-item" dir-paginate="t in twitts.statuses | itemsPerPage:20">
+            <li class="list-group-item" dir-paginate="t in twitts.statuses | itemsPerPage:20">
                 <div class="media">
                     <div class="media-left">
                         <a ng-href="https://twitter.com/{{t.user.screen_name}}">
@@ -38,7 +39,7 @@
                         <span title="Favorite"><i class="fa fa-star"></i> {{t.favorite_count}}</span>
                     </div>
                 </div>
-            </ul>
+            </li>
         </ul>
         <dir-pagination-controls></dir-pagination-controls>
     </div>
