@@ -1,4 +1,19 @@
 angular.module('twitter')
-    .controller('SearchController', function() {
+    .controller('SearchController', function($scope, Socket) {
+        // Send SearchTerm to the Server Socket
+        $('form').submit(function(){
+            Socket.emit('search', $('#searchTerm').val());
+            return false;
+        });
+        // Listening input, append search term to recent searches
+        Socket.on('search', function(data){
+            $('#searchMessages').append($('<li>').text(data));
 
+        });
+
+        // Listening for server Socket response
+        Socket.on('twitter response', function (data) {
+            console.log(data);
+            $scope.twitts = data;
+        });
 });

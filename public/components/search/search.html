@@ -1,1 +1,42 @@
-<h2>seach</h2>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="home">
+                Twitter
+            </a>
+        </div>
+        <form class="navbar-form navbar-right" action="">
+            <div class="input-group">
+                <input type="text" placeholder="Search Twitter"  id="searchTerm" class="form-control"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <div class="col-sm-4">
+        <h3>Recent searches</h3>
+        <ul id="searchMessages"></ul>
+    </div>
+    <div class="col-sm-8">
+        <ul class="list-group">
+            <ul class="list-group-item" ng-repeat="t in twitts.statuses">
+                <div class="media">
+                    <div class="media-left">
+                        <a ng-href="https://twitter.com/{{t.user.screen_name}}">
+                            <img ng-src="{{t.user.profile_image_url}}" alt="" width="50px" class="img-rounded"/>
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <a ng-href="https://twitter.com/{{t.user.screen_name}}"><b>{{t.user.name}}</b></a><small> @{{t.user.screen_name}}</small></small>
+                        <p>{{t.text}}</p>
+                        <span title="Retweet"><i class="fa fa-retweet"></i> {{t.retweet_count}}</span>
+                        <span title="Favorite"><i class="fa fa-star"></i> {{t.favorite_count}}</span>
+                    </div>
+                </div>
+            </ul>
+        </ul>
+    </div>
+</div>
