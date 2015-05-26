@@ -25,7 +25,7 @@ io.on('connection', function(socket){
         console.log(data);
 
         //query twitter api with received data
-        T.get('search/tweets', { q: data, count: 4 }, function(err, data, res) {
+        T.get('search/tweets', { q: data, count: 100 }, function(err, data, res) {
             if(err)
                 throw err;
             else

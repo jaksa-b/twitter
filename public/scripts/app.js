@@ -1,10 +1,11 @@
 angular.module('twitter', [
     'ui.bootstrap',
     'ui.router',
-    'angularMoment'
+    'angularMoment',
+    'angularUtils.directives.dirPagination'
 ])
 
-.config(function ($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider, paginationTemplateProvider) {
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
@@ -18,4 +19,6 @@ angular.module('twitter', [
             templateUrl: 'components/search/search.html',
             controller:'SearchController'
         });
+
+        paginationTemplateProvider.setPath('../bower_components/angular-utils-pagination/dirPagination.tpl.html');
 });

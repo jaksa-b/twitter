@@ -22,7 +22,7 @@
     </div>
     <div class="col-sm-8">
         <ul class="list-group">
-            <ul class="list-group-item" ng-repeat="t in twitts.statuses">
+            <ul class="list-group-item" dir-paginate="t in twitts.statuses | itemsPerPage:20">
                 <div class="media">
                     <div class="media-left">
                         <a ng-href="https://twitter.com/{{t.user.screen_name}}">
@@ -30,7 +30,9 @@
                         </a>
                     </div>
                     <div class="media-body">
-                        <a ng-href="https://twitter.com/{{t.user.screen_name}}"><b>{{t.user.name}}</b></a><small> @{{t.user.screen_name}}</small> - <small am-time-ago="t.created_at"></small>
+                        <a ng-href="https://twitter.com/{{t.user.screen_name}}"><b>{{t.user.name}}</b></a>
+                        <small> @{{t.user.screen_name}}</small>
+                        - <small am-time-ago="t.created_at"></small>
                         <p>{{t.text}}</p>
                         <span title="Retweet"><i class="fa fa-retweet"></i> {{t.retweet_count}}</span>
                         <span title="Favorite"><i class="fa fa-star"></i> {{t.favorite_count}}</span>
@@ -38,5 +40,6 @@
                 </div>
             </ul>
         </ul>
+        <dir-pagination-controls></dir-pagination-controls>
     </div>
 </div>
