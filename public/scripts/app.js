@@ -1,6 +1,7 @@
 angular.module('twitter', [
     'ui.bootstrap',
-    'ui.router'
+    'ui.router',
+    'angularMoment'
 ])
 
 .config(function ($stateProvider, $urlRouterProvider) {
