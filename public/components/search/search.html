@@ -34,7 +34,7 @@
                         <a ng-href="https://twitter.com/{{t.user.screen_name}}"><b>{{t.user.name}}</b></a>
                         <small> @{{t.user.screen_name}}</small>
                         - <small am-time-ago="t.created_at"></small>
-                        <p>{{t.text}}</p>
+                        <p ng-bind-html=" t.text | highlight:twitts.search_metadata.query">{{t.text}}</p>
                         <span title="Retweet"><i class="fa fa-retweet"></i> {{t.retweet_count}}</span>
                         <span title="Favorite"><i class="fa fa-star"></i> {{t.favorite_count}}</span>
                     </div>
