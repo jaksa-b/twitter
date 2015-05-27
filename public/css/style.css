@@ -9,3 +9,6 @@
 .highlighted {
     font-weight: bold;
 }
+.noresults{
+    padding: 50px 0;
+}

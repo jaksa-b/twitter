@@ -22,6 +22,14 @@
         <ul id="searchMessages"></ul>
     </div>
     <div class="col-sm-8">
+        <!-- If No Results Show -->
+        <div ng-show="noresults">
+            <div class="panel panel-default text-center noresults">
+                <i class="fa fa-twitter fa-2x"></i>
+                <h4>No Results for <strong>{{twitts.search_metadata.query}}</strong></h4>
+            </div>
+        </div>
+        <!--/ If No Results Show -->
         <ul class="list-group">
             <li class="list-group-item" dir-paginate="t in twitts.statuses | itemsPerPage:20">
                 <div class="media">
