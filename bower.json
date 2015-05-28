@@ -22,6 +22,7 @@
     "fontawesome": "~4.3.0",
     "moment": "~2.10.3",
     "angular-moment": "~0.10.1",
-    "angular-utils-pagination": "~0.7.0"
+    "angular-utils-pagination": "~0.7.0",
+    "angular-ui-router": "~0.2.15"
   }
 }
