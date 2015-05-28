@@ -69,7 +69,7 @@ io.on('connection', function (socket) {
             else
             //send data to client
                 io.emit('twitter response', data);
-            console.log(data);
+            //console.log(data);
         });
     });
 });
