@@ -13,7 +13,7 @@ var T = new Twit({
 });
 
 // Connect to mongodb
-mongoose.connect('mongodb://heroku_app37285105:tjok8f29c5rutr909qlvaf6gbi@ds033097.mongolab.com:33097/heroku_app37285105', function (err) {
+mongoose.connect('mongodb://userfo4t4jdf3:8uvfC68k31i5s9Z@ds033097.mongolab.com:33097/heroku_app37285105', function (err) {
     if (err)
         throw err;
     else
