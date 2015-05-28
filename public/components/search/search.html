@@ -17,11 +17,19 @@
     </div>
 </nav>
 <div class="container">
-    <div class="col-sm-4">
-        <h3>Recent searches</h3>
-        <ul id="searchMessages"></ul>
-    </div>
-    <div class="col-sm-8">
+    <!-- Sidebar -->
+    <div class="col-sm-3">
+        <!-- Show Recent Searches in Sidebar -->
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title">Recent Searches</h3></div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="t in tweetdb">
+                    {{t.text}}
+                </li>
+            </ul>
+        </div><!--/ Show Recent Searches in Sidebar -->
+    </div><!--/ Sidebar -->
+    <div class="col-sm-9">
         <!-- If No Results Show -->
         <div ng-show="noresults">
             <div class="panel panel-default text-center noresults">

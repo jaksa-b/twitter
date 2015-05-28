@@ -6,11 +6,18 @@ angular.module('twitter')
             Socket.emit('search', $('#searchTerm').val());
             return false;
         });
+        /*
         // Listening input, append search term to recent searches
         Socket.on('search', function(data){
             $('#searchMessages').append($('<li>').text(data));
 
         });
+        */
+        Socket.on('db', function (tweets) {
+            $scope.tweetdb = tweets;
+            console.log(tweets);
+        });
+
 
         // Listening for server Socket response
         Socket.on('twitter response', function (data) {
