@@ -8,7 +8,7 @@
         <li ng-show="loading" class="loading"><i class="fa fa-refresh fa-spin fa-2x"></i></li>
         <form class="navbar-form navbar-right" action="">
             <div class="input-group">
-                <input type="text" placeholder="Search Twitter"  id="searchTerm" class="form-control"/>
+                <input type="text" placeholder="Search Twitter" id="searchTerm" class="form-control"/>
                 <span class="input-group-btn">
                     <button class="btn btn-default"><i class="fa fa-search"></i></button>
                 </span>
@@ -27,8 +27,10 @@
                     {{t.text}}
                 </li>
             </ul>
-        </div><!--/ Show Recent Searches in Sidebar -->
-    </div><!--/ Sidebar -->
+        </div>
+        <!--/ Show Recent Searches in Sidebar -->
+    </div>
+    <!--/ Sidebar -->
     <div class="col-sm-9">
         <!-- If No Results Show -->
         <div ng-show="noresults">
@@ -49,7 +51,8 @@
                     <div class="media-body">
                         <a ng-href="https://twitter.com/{{t.user.screen_name}}"><b>{{t.user.name}}</b></a>
                         <small> @{{t.user.screen_name}}</small>
-                        - <small am-time-ago="t.created_at"></small>
+                        -
+                        <small am-time-ago="t.created_at"></small>
                         <p ng-bind-html=" t.text | highlight:twitts.search_metadata.query">{{t.text}}</p>
                         <span title="Retweet"><i class="fa fa-retweet"></i> {{t.retweet_count}}</span>
                         <span title="Favorite"><i class="fa fa-star"></i> {{t.favorite_count}}</span>

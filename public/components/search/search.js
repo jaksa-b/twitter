@@ -13,11 +13,11 @@ angular.module('twitter')
 
         });
         */
+        // Listen for mongodb
         Socket.on('db', function (tweets) {
             $scope.tweetdb = tweets;
             console.log(tweets);
         });
-
 
         // Listening for server Socket response
         Socket.on('twitter response', function (data) {
