@@ -74,7 +74,7 @@ io.on('connection', function (socket) {
     });
 });
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', (process.env.PORT || 5000));
 
 http.listen(app.get('port'), function () {
     console.log('Server listening on port http://localhost:' + app.get('port'));
